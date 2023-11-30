@@ -8,7 +8,7 @@
 
   - name: copiar index.html
     ansible.builtin.copy:
-      src: /home/ansible/habilitantes_ansible/certificados/10.1.99.155/fitappdesa.austro.grpfin.jks
+      src: /var/lib/awx/recursos/certificados/10.1.99.155/fitappdesa.austro.grpfin.jks
       dest: /home/usrfit
       owner: root
       group: root
