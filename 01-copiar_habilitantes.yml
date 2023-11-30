@@ -1,0 +1,12 @@
+---
+- name: Copiar los objetos al destino para la actualizacion de certificados
+  hosts: 127.0.0.1
+  become: yes 
+  become_user: root
+
+  tasks:
+   - name: Copiar archivos al servidor
+     copy:
+        src: "/home/ansible/habilitantes_ansible/certificados/10.1.99.155/fitappdesa.austro.grpfin.jks"
+        dest: "/home/usrfit"
+     delegate_to: 10.1.99.155
