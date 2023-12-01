@@ -6,4 +6,4 @@
 
   tasks:
     - name: Copiar archivos usando rsync
-      ansible.builtin.command: rsync -av /home/prueba1.txt root@10.1.99.155:/home/usrfit
+      ansible.builtin.command: rsync -av /home/prueba1.txt ansible@10.1.99.155:/home/usrfit
