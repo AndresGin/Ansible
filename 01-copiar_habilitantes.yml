@@ -6,9 +6,9 @@
 
   tasks:
 
-  - name: copiar index.html
+  - name: copiar certificado 
     ansible.builtin.copy:
-      src: /var/lib/awx/recursos/certificados/10.1.99.155/fitappdesa.austro.grpfin.jks
+      src: /home/prueba1.txt
       dest: /home/usrfit
       owner: root
       group: root
