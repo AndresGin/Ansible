@@ -5,11 +5,10 @@
   become_user: root
 
   tasks:
-
-  - name: copiar certificado 
-    ansible.builtin.copy:
-      src: /home/prueba1.txt
-      dest: /home/usrfit
-      owner: root
-      group: root
-      mode: '0644'  
+    - name: copiar certificado 
+      ansible.builtin.copy:
+        src: /home/prueba1.txt
+        dest: /home/usrfit
+        owner: root
+        group: root
+        mode: '0644'
