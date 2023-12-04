@@ -5,8 +5,7 @@
   become_user: root
 
   tasks:
-   - name: Detener servicio JBoss EAP 7
-     ansible.builtin.service:
-       name: eap7-domain.service
-       state: stopped
-     become: yes
+    - name: Detener servicio eap7-domain.service
+      ansible.builtin.systemd:
+        name: eap7-domain.service
+        state: stopped
