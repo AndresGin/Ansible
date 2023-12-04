@@ -7,3 +7,5 @@
   tasks:
     - name: Copiar archivos usando rsync
       ansible.builtin.command: rsync -av /home/prueba1.txt  {{ credencial.username }}@@10.1.99.155:/home/usrfit
+      vars:
+        ansible_ssh_pass: "{{ credencial_rsync.clave }}"
