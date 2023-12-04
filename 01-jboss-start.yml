@@ -1,5 +1,5 @@
 ---
-- name: Deetener el servicio de Jboss
+- name: Inciar el servicio de Jboss
   hosts: 10.1.99.155
   become: yes 
   become_user: root
@@ -8,4 +8,4 @@
     - name: Detener servicio eap7-domain.service
       ansible.builtin.systemd:
         name: eap7-domain.service
-        state: stopped
+        state: started
