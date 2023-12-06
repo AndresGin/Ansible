@@ -1,0 +1,34 @@
+---
+- name: Respaldar objetos para la actualizacion de certificados
+  hosts: 10.1.99.155
+  become: yes 
+  become_user: root
+
+  tasks:
+    - name: Crear directorio de respaldo /home/usrfit/respaldos
+      file:
+        path: "{{ directorio_destino_respaldos }}/respaldos"
+        state: directory
+        mode: 0755
+        owner: "{{ usuario_so }}"
+        group: "{{ grupo_so }}"
+
+
+    - name: Respaldar /opt/jboss-eap7/domain/configuration/certificado/ al directorio de respaldo
+      copy:
+        src: "{{ carpeta_destino }}/certificado"
+        dest: "{{ directorio_destino_respaldos }}/respaldos"
+        remote_src: yes
+        mode: 0755
+        owner: "{{ usuario_app }}"
+        group: "{{ grupo_app }}"
+        
+    
+    - name: Respaldar archivo de configuracion /opt/jboss-eap7/domain/configuration/host-vmfitbapp03.xml al directorio de respaldo
+      copy:
+        src: "{{ carpeta_destino }}/host-vmfitbapp03.xml"
+        dest: "{{ directorio_destino_respaldos }}/respaldos"
+        remote_src: yes
+        mode: 0755
+        owner: "{{ usuario_app }}"
+        group: "{{ grupo_app }}"
